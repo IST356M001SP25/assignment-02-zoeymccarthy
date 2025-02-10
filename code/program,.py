@@ -26,4 +26,20 @@ Example:
     ]    
 '''
 
-# TODO: Write code
+def main():
+    input_file = "data/packaging.txt"
+    output_file = "data/packaging.json"
+    packages = []
+    
+    with open(input_file, "r") as file:
+        for line in file:
+            line = line.strip()
+            if line:
+                parsed_package = parse_packaging(line)
+                packages.append(parsed_package)
+                total_units = calc_total_units(parsed_package)
+                unit = get_unit(parsed_package)
+                print(f"{line} => total units: {total_units} {unit}")
+    
+    with open(output_file, "w") as json_file:
+        json.dump(packages, json_file, indent=4)
