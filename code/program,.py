@@ -25,6 +25,7 @@ Example:
         [{ 'bars' : 6}, {'packs' : 12}, {'carton' : 1}],
     ]    
 '''
+import json
 
 def main():
     input_file = "data/packaging.txt"
