@@ -56,7 +56,15 @@ def calc_total_units(package: list[dict]) -> int:
     input: [{ 'pieces' : 20}, {'packs' : 10}, {'carton' : 4}, {'box' : 1}]
     output: 800 (e.g. 20*10*4*1)
     '''
-    for (i in list)
+    #make a counter variable
+    count = 1
+    
+    # iterate through the list to multiply all quantities together
+    for item in package:
+        count *= list(item.values())[0]  #item.values() returns all the values in the list to extract and multiply the quantity
+    return count #returns the counter variable
+
+
         
 
 
@@ -71,8 +79,12 @@ def get_unit(package: list[dict]) -> str:
 
     input: [{ 'pieces' : 20}, {'packs' : 10}, {'carton' : 4}, {'box' : 1}]
     output: pieces
-
     '''
+    if not package:
+        return ""  # Return an empty string if the list is empty
+
+    first_dict = package[0]  # Get the first dictionary
+    return list(first_dict.keys())[0]  # Return the first key (unit name)
     
     
 
