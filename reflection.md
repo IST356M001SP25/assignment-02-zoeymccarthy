@@ -23,6 +23,11 @@ Examples:
 
 `--- Reflection Below This Line ---`
 
-The main thing I learned during this assignment was about how to use dictionaries and lists of dictionaries. I learned that the keys() function can be used on dictionaries to return all the key values, which can be useful to iterate through all the key values or check if a specific key exists in a dictionary. I also learned that keys() can only be used with dictionaries. 
-During this assignment I learned that you can create dictionaries inside of dictionaries, and you can also make lists of dictionaries. I found that lists of dictionaries can be useful for iterating through each dictionary. 
-I learned that lists of dictionaries can also be useful for storing different values to the same keys. For example, you could store information for each dog at a shelter in a dictionary, then store the dictionaries in a list. I though it was interesting how this idea connected with the work we're doing in one of the other classes I'm taking on database structures. 
+The main thing I learned during this assignment was about how to use dictionaries and lists of dictionaries. 
+I learned that the keys() function can be used on dictionaries to return all the key values, which can be useful to iterate through all the key values or check if a specific key exists in a dictionary. 
+I also learned that keys() can only be used with dictionaries. 
+During this assignment I learned that you can create dictionaries inside of dictionaries, and you can also make lists of dictionaries. 
+I found that lists of dictionaries can be useful for iterating through each dictionary. 
+I learned that lists of dictionaries can also be useful for storing different values to the same keys. 
+For example, you could store information for each dog at a shelter in a dictionary, then store the dictionaries in a list. 
+I though it was interesting how this idea connected with the work we're doing in one of the other classes I'm taking on database structures. 
