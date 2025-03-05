@@ -18,29 +18,29 @@ def parse_packaging(packaging_data: str) -> list[dict]:
     input: "20 pieces in 1 pack / 10 packs in 1 carton / 4 cartons in 1 box"
     output: [{ 'pieces' : 20}, {'packs' : 10}, {'carton' : 4}, {'box' : 1}]
     '''
-    parsed_list = []
+    parsed_list = [] #make the list we will eventually return
     
     # Split different packaging levels
-    levels = packaging_data.split(' / ')
+    levels = packaging_data.split(' / ') #split the string by the '/' to get the different quantities and containers
     
-    for level in levels:
-        parts = level.split(' in ')
-        if len(parts) == 2:
-            left, right = parts
-            left_parts = left.split()
-            right_parts = right.split()
+    for i in levels:
+        parts = i.split(' in ')
+        if len(parts) == 2: #if two components
+            quantity_item, container = parts 
+            quantity_item_parts = quantity_item.split()
+            container_parts = container.split()
             
-            if len(left_parts) == 2 and len(right_parts) == 2:
-                quantity1, item1 = left_parts
-                quantity2, item2 = right_parts
+            if len(quantity_item_parts) == 2 and len(container_parts) == 2:
+                quantity1, item1 = quantity_item_parts
+                quantity2, item2 = container_parts
                 
-                parsed_list.append({item1: int(quantity1)})
+                parsed_list.append({item1: int(quantity1)})#add new entry to the list of the quantity and item
     
-    # Add the final outermost container
-    if len(right_parts) == 2:
+    # Add the outermost container
+    if len(container_parts) == 2: #checking to see if container and quantity
         parsed_list.append({item2: int(quantity2)})
     
-    return parsed_list
+    return parsed_list #return the list
 
 
 
@@ -80,11 +80,10 @@ def get_unit(package: list[dict]) -> str:
     input: [{ 'pieces' : 20}, {'packs' : 10}, {'carton' : 4}, {'box' : 1}]
     output: pieces
     '''
-    if not package:
-        return ""  # Return an empty string if the list is empty
-
-    first_dict = package[0]  # Get the first dictionary
-    return list(first_dict.keys())[0]  # Return the first key (unit name)
+    if package:
+        first_item = package[0]  # Get the first dictionary
+        return list(first_item.keys())[0]  # Return the first key (unit name)
+    return ""  # Return an empty string if the list is empty
     
     
 
